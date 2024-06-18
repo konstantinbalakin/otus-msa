@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otus-02-docker-kbalakin-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: otus-02-docker-kbalakin
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: otus-02-docker-kbalakin
+    spec:
+      containers:
+        - name: otus-02-docker-kbalakin
+          image: kosbalakin/otus-02-docker-kbalakin:1.2
+          ports:
+            - containerPort: 8000
