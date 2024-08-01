@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: otus-02-docker-kbalakin-service
+spec:
+  selector:
+    app: otus-02-docker-kbalakin
+  ports:
+    - name: otus-service-port
+      protocol: TCP
+      port: 8000
+      targetPort: otus-port
