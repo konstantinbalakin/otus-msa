@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: otus-04-kbalakin-deployment
+  name: otus-kbalakin-deployment
 spec:
   replicas: 2
   selector:

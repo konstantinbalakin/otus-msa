@@ -40,8 +40,12 @@ RESPONSE: {"status": "OK"}
 Например: curl arch.homework/otusapp/aeugene/health -> рерайт пути на arch.homework/health
 
 Рекомендации по форме сдачи дз:
+Если helm не установлен, то устанавливаем командами:
+```asciidoc
+brew install helm
+```
 использовать nginx ingress контроллер, установленный через хелм, а не встроенный в миникубик:
-kubectl create namespace m && helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx/ && helm repo update && helm install nginx ingress-nginx/ingress-nginx --namespace m -f nginx-ingress.yaml (файл приложен к занятию)
+kubectl create namespace m && helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx/ && helm repo update && helm install nginx ingress-nginx/ingress-nginx --namespace m -f otus-04-kbalakin/Manifests/nginx_ingress.yaml (файл приложен к занятию)
 https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/
 необходимо в новых версиях nginx добавлять класс ингресса
 ingressClassName: nginx
